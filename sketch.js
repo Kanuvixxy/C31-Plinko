@@ -16,12 +16,6 @@ function setup() {
   world = engine.world;
 
   ground = new Ground(width / 2, height, width, 20);
-}
-
-function draw() {
-  background(0);  
-
-  Engine.update(engine);
   
   for(var k = 0; k <= width; k = k + 80){
     divisions.push(new Division(k, height - divisionHeight / 2, 10, divisionHeight));
@@ -42,6 +36,12 @@ function draw() {
   for(var i = 50; i <= width - 10; i = i + 50){
     plinkos.push(new Plinko(i, 375));
   }
+}
+
+function draw() {
+  background(0);  
+
+  Engine.update(engine);
 
   for(var g = 0; g < plinkos.length; g++){
     plinkos[g].display();
